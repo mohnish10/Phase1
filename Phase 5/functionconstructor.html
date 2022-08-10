@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+
+function Employee(name, designation, yearOfBirth)
+{
+this.name=name;
+this.designation=designation;
+this.yearOfBirth=yearOfBirth;    
+}
+
+
+Employee.prototype.calculateAge = function() {
+document.write("Age :"+(2022-this.yearOfBirth))
+}
+
+
+var emp1 = new Employee("Mohnish","Quality Analyst","1988");
+var emp2 = new Employee("Vishwajeet","Chat Agent Executive","1983");
+
+
+document.write(emp1.name + " " + emp1.designation + " " + emp1.yearOfBirth + " ");
+document.write(emp2+"<br>");
+
+
+emp1.calculateAge();
+emp2.calculateAge();
+
+document.write(emp1.name.toString())
+
+
+</script>
+</body>
+</html>

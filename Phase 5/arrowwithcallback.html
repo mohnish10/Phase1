@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+</head>
+<body>
+<script>
+let add = (a,b) => a+b;
+let sub = (a,b) => a-b;
+
+let data = (num1,num2,callback)=>callback(num1,num2);
+
+document.write(data(10,20,add)+"<br>");
+document.write(data(23,6,sub)+"<br>");
+
+let mul = (a) => (b) => (a*b);
+let div = (a) => (b) => (a/b);
+
+
+document.write(mul(10)(20)+"<br>");
+document.write(div(20)(10)+"<br>");
+
+
+
+
+
+
+</script>
+</body>
+</html>

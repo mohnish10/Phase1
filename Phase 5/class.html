@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+</head>
+<body>
+<script>
+class Employee
+{
+
+constructor(name,designation,salary)
+{
+this.name=name;
+this.designation=designation;
+this.salary=salary;    
+}
+
+
+print()
+{
+document.write("Name :"+ " "+this.name+"<br>");
+document.write("Designation :"+" "+this.designation+"<br>");
+document.write("Salary :"+" "+this.salary+"<br>");    
+}
+
+
+checkSalary()
+{
+if(this.salary>=5)
+{
+document.write(this.name+ " "+"taxable income"+"<br>");    
+}
+else
+{
+document.write(this.name+ " "+"untaxable income"+"<br>");   
+}    
+}
+
+}
+
+
+let emp1 = new Employee("Mohnish","Quality Analyst",13);
+let emp2 = new Employee("Laldushka","Sr Customer Care Executive",4);
+
+emp1.print();
+emp2.print();
+emp1.checkSalary();
+emp2.checkSalary();
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>    
+</body>
+</html>

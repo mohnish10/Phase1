@@ -1,0 +1,49 @@
+package com.simplilearn.selfpractice;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+
+public class ElementRepeatArray 
+{
+public static void main(String[] args)
+{
+Scanner sc = new Scanner(System.in);
+System.out.println("Please enter the size of the array");
+int n = sc.nextInt();
+int[] a = new int[n];
+System.out.println("Please enter the array elements");
+for(int i = 0;i<a.length;i++)
+a[i]=sc.nextInt();	
+System.out.println("Array :-"+Arrays.toString(a));
+Map<Integer,Integer>cMap = new HashMap<Integer,Integer>();
+for(int i = 0;i<a.length;i++)
+{
+int element = a[i];
+if(cMap.containsKey(element))
+{
+int count = cMap.get(element);
+count++;
+cMap.put(element,count);
+}
+else
+{	
+cMap.put(element, 1);
+}
+}
+
+for(Entry<Integer,Integer> val : cMap.entrySet())
+{
+System.out.println(val.getKey() + " "+ "occurs" + " "  + val.getValue() + " " + "times");	
+}
+
+
+
+
+
+
+
+}
+}

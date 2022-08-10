@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Document</title>
+</head>
+<body>
+<script>    
+function fetchdata(callback)
+{
+setTimeout(
+function(){
+document.write("data fetched"+"<br>");
+callback()
+},3000
+);   
+}
+
+function displayData()
+{
+document.write("data displayed");    
+}
+
+fetchdata(displayData)
+
+
+</script>
+</body>
+</html>

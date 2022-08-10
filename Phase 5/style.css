@@ -1,0 +1,57 @@
+.center
+{
+background-color : rgb(100, 50, 160);
+text-align: center;
+text-decoration: underline;    
+}
+
+#para1
+{
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: medium;
+font-weight: 500;
+border: 3px double red;
+border-width: 5px 6px;
+border-top-style: dotted;
+border-bottom-style: dashed;
+border-right-style: solid;
+border-left-style: mixed;
+}
+
+body
+{
+padding: 10px,10px,10px,10px;
+margin: auto;
+background: url("sanji.jfif");
+background-size: cover;    
+}
+
+h2
+{
+color: brown;
+text-shadow: aliceblue;
+}
+
+div
+{
+line-height: normal;
+text-decoration: underline;
+font-size: large;    
+}
+
+
+
+
+
+
+#para2
+{
+text-align: justify;
+color:cyan;
+border: 3px solid greenyellow;
+border-width: thick;
+border-radius: 10px;
+font-size: larger;
+margin-top: 100px;    
+}
+

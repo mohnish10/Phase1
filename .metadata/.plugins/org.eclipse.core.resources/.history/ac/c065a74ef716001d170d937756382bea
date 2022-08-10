@@ -1,0 +1,45 @@
+package com.simplilearn.selfpractice;
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+
+
+
+
+
+
+
+
+public class KthSmallestAndKthLargest 
+{
+public static void main(String[] args)
+{
+Scanner sc = new Scanner(System.in);
+System.out.println("Please enter the size of the array which you want");
+int n = sc.nextInt();
+int[] a = new int[n];
+System.out.println("Please enter the array elements");
+for(int i = 0;i<a.length;i++)
+{
+a[i]=sc.nextInt();	
+}
+Arrays.sort(a);
+System.out.println("Sorted array is :-"+Arrays.toString(a));
+System.out.println("Please enter the index for which you want the smallest and the largest element");
+int element = sc.nextInt();
+try
+{
+if(element>a.length)
+System.out.println("Index is out of bounds");
+}
+catch(Exception e)
+{
+e.printStackTrace();	
+}
+
+
+}
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Document</title>
+</head>
+<body>
+<script>
+const print = () => document.write("Hello World"+"<br>");    
+
+const add = (a,b) => a+b;
+
+
+const test = (a,b) => {
+num1=a+b;
+num2=a*b;
+return num1+num2;
+}
+
+
+print();
+document.write('addition' + " "+add(2,3)+"<br>");
+document.write('test'+ " " + test(2,3)+"<br>");
+(
+()=>document.write("my function")
+)();
+
+
+
+
+</script>
+</body>
+</html>

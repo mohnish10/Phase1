@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+<script>
+let map = new Map();
+map.set(1,"Mohnish");
+map.set(2,"Amol");
+map.set(3,"Harshad");
+map.set(4,"Umesh");
+
+
+document.write(map+"<br>");
+document.write("Does a map have key 4 ?"+map.has(4)+"<br>");
+document.write("get the value for key 3"+map.get(3)+"<br>");
+document.write("Current map size"+map.size+"<br>");
+map.delete(4);
+document.write("Current map size"+map.size+"<br>");
+
+var  obj = map.entries();
+
+document.write("display all key-value pairs"+"<br>");
+for(let x of obj)
+{
+document.write(x[0]+ " "+x[1]+"<br>");
+}
+
+
+var obj1 = map.keys();
+
+
+document.write("display all keys"+"<br>");
+for(let x of obj1)
+{
+document.write(x+"<br>");
+}
+
+
+var obj2 = map.values();
+
+
+
+document.write("display all values"+"<br>");
+for(let x of obj2)
+{
+document.write(x+"<br>");
+}
+
+
+
+
+
+
+
+
+
+map.clear();
+document.write("After clearing map :"+" " +map.size);
+
+
+
+
+
+
+
+
+
+
+</script>    
+</body>
+</html>
