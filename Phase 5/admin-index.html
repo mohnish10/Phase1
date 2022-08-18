@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="admin-style.css">
+    <!-- <script src="admin-script.js"></script> -->
+    <title>Admin Home</title>
+</head>
+
+<body>
+<!---------------------------------------------------- HEADER SECTION ----------------------------------------------->
+    <header class="main-header" style="background: rgb(98, 93, 141);">
+        <nav class="main-nav nav" style="font-weight: bolder; font-size: 20px; font-style: oblique;">
+            <ul>
+                <a class="navbar-brand" style="color: white; font-weight: bolder; font-size: 40px; font-family: cursive;" href="#">Kitchen Story</a>
+                <li><a href="KitchenStoryMain.html">HOME</a></li>
+                <li><a href="KitchenStoryMain.html">STORE</a></li>
+                <li><a href="#changePassword">CHANGE PASSWORD</a></li>
+                <li><a href="Login.html">LOGOUT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <!---------------------------------------------------- SEARCH BAR ----------------------------------------------->
+    <input type="text" class="searchBar" id="myInput" placeholder="Search by Product Category" onkeyup="searchFun()"
+    style="border: 3px solid saddlebrown; font-weight: bolder; width: 68.5%; margin-left: 200px; border-radius: 12px;">
+    <br><br>
+
+    <!---------------------------------------------------- TABLE FORM SECTION ----------------------------------------------->
+    <table>
+        <div class="conatiner">
+            <h1>Add item</h1>
+            <hr>
+          </div>
+        <tr>
+            <td> 
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div>
+                        <label>Product Id*</label><label class="validation-error hide" id="pIdValidationError">This field is required.</label>
+                        <input type="text" name="pId" id="pId">
+                    </div>
+                    <div>
+                        <label>Product Name</label>
+                        <input type="text" name="pName" id="pName">
+                    </div>
+                    <div>
+                        <label>Product Price</label>
+                        <input type="text" name="pPrice" id="pPrice">
+                    </div>
+                    <div>
+                        <label>Product Category</label><br>
+                        <select name="pCategory" id="pCategory">
+                            <option value="Fruits">Fruits</option>
+                            <option value="Vegetables">Vegetables</option>
+                            <option value="Masala">Masala</option>
+                            <option value="Nuts">Snacks</option>
+                            
+                          </select>
+                    </div>
+                    <div class="form-action-buttons">
+                        <input type="submit" value="Submit" style="background-color: rgb(47, 52, 100); color: white; font-weight: bolder; font-size: 15px;">
+                    </div>
+                </form>
+            </td>
+        </table>
+            <!---------------------------------------------------- TABLE PRODUCT DATA ----------------------------------------------->
+            
+            <div class="conatiner">
+                <h1>Available Items</h1>
+                <hr>
+              </div>
+            <table>
+            <td >
+                <table class="list" id="productList">
+                    <thead>
+                        <tr>
+                            <th>Product Id</th>
+                            <th>Product Name</th>
+                            <th>Product Price</th>
+                            <th>Product Category</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>M001</td>
+                            <td>Pepper</td>
+                            <td>Rs.250</td>
+                            <td>Masala</td>
+                            <td><a onClick="onEdit(this)">Edit</a>
+                                <a onClick="onDelete(this)">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>M002</td>
+                            <td>Cloves</td>
+                            <td>Rs.100</td>
+                            <td>Masala</td>
+                            <td><a onClick="onEdit(this)">Edit</a>
+                                <a onClick="onDelete(this)">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>M003</td>
+                            <td>Cardomom</td>
+                            <td>Rs.150</td>
+                            <td>Masala</td>
+                            <td><a onClick="onEdit(this)">Edit</a>
+                                <a onClick="onDelete(this)">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>F101</td>
+                            <td>Banana</td>
+                            <td>Rs.35</td>
+                            
+                            <td>Fruits</td>
+                            <td><a onClick="onEdit(this)">Edit</a>
+                                <a onClick="onDelete(this)">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>F102</td>
+                            <td>Orange</td>
+                            <td>Rs.50</td>
+                            
+                            <td>Fruits</td>
+                            <td><a onClick="onEdit(this)">Edit</a>
+                                <a onClick="onDelete(this)">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>F103</td>
+                            <td>Apple</td>
+                            <td>Rs.100</td>
+                            <td>Fruits</td>
+                            <td><a onClick="onEdit(this)">Edit</a>
+                                <a onClick="onDelete(this)">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>V201</td>
+                            <td>Potato</td>
+                            <td>Rs.20</td>
+                            
+                            <td>Vegetables</td>
+                            <td><a onClick="onEdit(this)">Edit</a>
+                                <a onClick="onDelete(this)">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>V202</td>
+                            <td>Tomato</td>
+                            <td>Rs.50</td>
+                            <td>Vegetables</td>
+                            <td><a onClick="onEdit(this)">Edit</a>
+                                <a onClick="onDelete(this)">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>V203</td>
+                            <td>Onion</td>
+                            <td>Rs.25</td>
+                            <td>Vegetables</td>
+                            <td><a onClick="onEdit(this)">Edit</a>
+                                <a onClick="onDelete(this)">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>V301</td>
+                            <td>Almond</td>
+                            <td>Rs.600</td>
+                            <td>Nuts</td>
+                            <td><a onClick="onEdit(this)">Edit</a>
+                                <a onClick="onDelete(this)">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>V302</td>
+                            <td>Raisins</td>
+                            <td>Rs.400</td>
+                            <td>Nuts</td>
+                            <td><a onClick="onEdit(this)">Edit</a>
+                                <a onClick="onDelete(this)">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <td>V301</td>
+                            <td>Cashew</td>
+                            <td>Rs.1000</td>
+                            <td>Nuts</td>
+                            <td><a onClick="onEdit(this)">Edit</a>
+                                <a onClick="onDelete(this)">Delete</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    
+    <!---------------------------------------------------- CHANGE PASSWORD SECTION ----------------------------------------------->
+    <section class="password" id="changePassword">
+        <br>
+        <div class="conatiner">
+            <h1>Change Password</h1>
+            <hr>
+          </div>
+          <br>
+          <div style="background-color: rgb(73, 123, 156); background-repeat: no-repeat; background-size: cover;">
+            <br><br>
+            <table style="margin-left: 400px; background-color: white; border-radius: 2px; border: 10 px solid saddlebrown; width: 40%;">
+                <tr>
+                    <td> 
+                        <form id="passForm" onsubmit="event.preventDefault();onSubmitClick();" autocomplete="off" method="post">
+                            <div>
+                                <label>Old Password</label><label class="validation-error hide" id="passValidationError">This field is required.</label>
+                                <input type="password" name="oldPass" id="oldPass">
+                            </div>
+                            <div>
+                                <label>New Password</label>
+                                <input type="password" name="newPass" id="newPass">
+                            </div>
+                            <div>
+                                <label>Confirm Password</label>
+                                <input type="password" name="confirmPass" id="confirmPass">
+                            </div>
+                            <div class="form-action-buttons">
+                                <input type="submit" value="Submit" style="background-color: seagreen; color: white; font-weight: bolder; font-size: 15px;">
+                            </div>
+                        </form>
+                    </td>
+                    </tr>
+                    </table><br>
+          </div>
+    </section><br><br>
+
+    <!------------------------------------------- FOOTER SECTION ---------------------------------------------------------->
+        <footer class="footer"><br>
+            <p>Copyright © Chandana B R 2022</p>
+        </footer>
+
+    <!---------------------------------------------------- SCRIPT REFERENCE ----------------------------------------------->
+    <script src="./admin-script.js"></script>
+    
+    
+</body>
+</html>
